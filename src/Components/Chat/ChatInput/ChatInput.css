@@ -1,0 +1,45 @@
+.chatInput{
+    border : 0px;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 15px;
+    width: 100%;
+    background-color: transparent;
+    z-index: 100;
+}
+
+.chatInputDecorator{
+    box-sizing: border-box;
+    background-color:white;
+    border-radius: 8px;
+    padding: 7px 15px;
+    position: relative;
+    display: flex;
+}
+
+.chatInput:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px;
+    /* border-bottom: 1px solid gray; */
+}
+
+.chatInput-helpertext {
+    position: absolute;
+    top: 10px;
+    left:65px;
+    color: gray;
+    font-size: 14px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.close-chat-input-button{
+    color: gray;
+    background-color: transparent;
+    border: 0px;
+    z-index: 10;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    margin: 0;
+    
+}

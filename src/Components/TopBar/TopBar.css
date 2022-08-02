@@ -1,0 +1,20 @@
+.topBar {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bg-sec-light);
+    height: 59px;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    border-right: 1px lightgray solid;
+}
+
+.userConent{
+    flex-grow: 1;
+    display: flex;
+    
+}
+
+.actionsConent{
+    flex-grow: none;
+    display: flex;
+}

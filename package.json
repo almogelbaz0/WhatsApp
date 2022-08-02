@@ -1,26 +1,31 @@
 {
-  "name": "whatsapp",
-  "version": "0.1.0",
+  "name": "my-webpack-project",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^12.0.0",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^8.0.2",
+    "react-scripts": "^4.0.1",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack --mode=production --node-env=production",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch",
+    "serve": "webpack serve"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +44,35 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.9.2",
+    "@reduxjs/toolkit": "^1.8.3",
+    "@types/react-redux": "^7.1.24",
+    "@types/styled-components": "^5.1.25",
+    "@webpack-cli/generators": "^2.5.0",
+    "autoprefixer": "^10.4.8",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss": "^8.4.14",
+    "postcss-loader": "^7.0.1",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.0",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "styled-components": "^5.3.5",
+    "ts-loader": "^9.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3",
+    "workbox-webpack-plugin": "^6.5.4"
+  },
+  "description": "My webpack project"
 }

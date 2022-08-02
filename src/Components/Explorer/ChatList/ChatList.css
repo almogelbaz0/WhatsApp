@@ -1,0 +1,30 @@
+.chatItem {
+    background-color: white;
+    height: 72px;
+    display: flex;
+    align-items:center;
+}
+
+.chatItem:hover {
+        
+    background-color: var(--bg-sec-light);
+    
+}
+
+.chat-img{
+    padding: 0 15px 0 13px
+}
+
+
+.chat-details{
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-name{
+    font-size: 17px;
+}
+
+.chat-last-comment{
+    font-size: 14px;
+}

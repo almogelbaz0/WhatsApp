@@ -1,0 +1,48 @@
+.chatItem {
+    background-color: white;
+    height: 72px;
+    display: flex;
+    align-items:center;
+    padding-right: 20px;
+}
+
+.chatItem:hover {
+    color: black;   
+    background-color: var(--bg-sec-light);
+    
+}
+
+.chat-img{
+    padding: 0 15px 0 13px
+}
+
+
+.chat-details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-bottom: 1px lightgray solid;
+    height: inherit;
+}
+
+.chat-name{
+    padding-top: 8px;
+    font-size: 17px;
+}
+
+.chat-last-comment{
+    padding-top: 4px;
+    font-size: 14px;
+    color: gray;
+}
+
+
+.chat-last-comment-date{
+    position: absolute;
+    right: 15px;
+    top : 10px;
+    font-size: 12px;
+    color:gray;
+}
+

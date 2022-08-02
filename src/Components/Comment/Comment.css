@@ -1,0 +1,25 @@
+.myComment{
+    padding: 6px;
+    display: flex;
+    background-color: rgb(217, 253, 211);
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.comment{
+    padding: 6px;
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.myCommentDiv{
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.commentDiv{
+    display: flex;
+    flex-flow: row;
+}
