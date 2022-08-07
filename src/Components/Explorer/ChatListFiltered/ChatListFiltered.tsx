@@ -1,19 +1,23 @@
 import './ChatList.css';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { ChatType, GroupChatType } from '../../../Modals/Chat/Chat';
-import { selectChats, setCurrentChat } from '../../../Store/ChatSlice/ChatsSlice';
-import { useAppDispatch, useAppSelector } from '../../../Store/hooks';
+import { setCurrentChat } from '../../../Store/ChatSlice/ChatsSlice';
+import { useAppDispatch } from '../../../Store/hooks';
 import ChatListItem from '../ChatListItem/ChatListItem';
 
-const ChatList = () => {
-  const chats = useAppSelector(selectChats);
+interface ChatListFilteredProps {
+  chats: (ChatType | GroupChatType)[] | undefined;
+}
+
+const ChatListFiltered = ({ chats }: ChatListFilteredProps) => {
+  // const chats = useAppSelector(selectChats);
   const dispatch = useAppDispatch();
 
   return (
     <div>
-      {chats.map((chat: ChatType | GroupChatType, index: number) => {
+      {chats?.map((chat: ChatType | GroupChatType, index: number) => {
         return (
           <ChatListItem
             key={index}
@@ -28,4 +32,4 @@ const ChatList = () => {
   );
 };
 
-export default ChatList;
+export default ChatListFiltered;

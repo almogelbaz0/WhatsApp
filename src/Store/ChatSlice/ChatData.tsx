@@ -1,87 +1,168 @@
 import React from 'react';
 
 import { ChatType, GroupChatType } from '../../Modals/Chat/Chat';
+import { CommentType } from '../../Modals/Comment/Comment';
 import { UserType } from '../../Modals/User/User';
 
-const ThisUser: UserType = {
-  name: "almogie",
+export const ThisUser: UserType = {
+  name: "Almogie",
   phoneNumber: "0524488432",
   id: "123",
   lastSync: new Date(),
 };
 
-export const ChatExemple: (ChatType | GroupChatType)[] = [
+type UserDB = {
+  [name: string]: UserType;
+};
+
+const users: UserDB = {
+  Almog: ThisUser,
+  Yossi: {
+    name: "Yossi",
+    phoneNumber: "0524488431",
+    id: "143",
+    lastSync: new Date(new Date().getTime() - 1000000),
+  },
+  Lony: {
+    name: "Lony",
+    phoneNumber: "0524488433",
+    id: "153",
+    lastSync: new Date(new Date().getTime() - 3000000),
+  },
+};
+
+export let ChatExemple: (ChatType | GroupChatType)[] = [
   {
     id: 1,
-
-    participants: [
-      {
-        name: "almogie",
-        phoneNumber: "0524488432",
-        id: "123",
-        lastSync: new Date(),
-      },
-      {
-        name: "Hlmogie",
-        phoneNumber: "0524488432",
-        id: "143",
-        lastSync: new Date(),
-      },
-    ],
+    type: "private",
+    participants: [users["Almog"], users["Yossi"]],
     comments: [
       {
-        time: new Date(),
-        sender: {
-          name: "almog",
-          phoneNumber: "0524488432",
-          id: "123",
-          lastSync: new Date(),
-        },
+        time: new Date(new Date().getTime() - 300000000),
+        sender: users["Almog"],
         content: {
-          getConent: () => <span>hey1</span>,
+          getConent: () => "Hey",
         },
       },
       {
-        time: new Date(),
-        sender: {
-          name: "Hlmog",
-          phoneNumber: "0524488432",
-          id: "133",
-          lastSync: new Date(),
-        },
+        time: new Date(new Date().getTime() - 300000),
+        sender: users["Yossi"],
         content: {
           getConent: () => (
             <span>
-              hey2 prototype property of the constructor appears in the
+              Hey2 prototype property of the constructor appears in the
               prototype chain of the object.
             </span>
           ),
+          textContect:
+            "Hey2 prototype property of the constructor appears in theprototype chain of the object.",
         },
       },
       {
-        time: new Date(),
-        sender: {
-          name: "Hlmog",
-          phoneNumber: "0524488432",
-          id: "133",
-          lastSync: new Date(),
-        },
+        time: new Date(new Date().getTime() - 300000),
+        sender: users["Almog"],
         content: {
           getConent: () => <span>hey</span>,
         },
       },
       {
-        time: new Date(),
-        sender: {
-          name: "almog",
-          phoneNumber: "0524488432",
-          id: "123",
-          lastSync: new Date(),
-        },
+        time: new Date(new Date().getTime() - 300000),
+        sender: users["Almog"],
         content: {
           getConent: () => (
             <span>
-              heyprototype property of the constructor appears in the prototype
+              hey prototype property of the constructor appears in the prototype
+              chain of the object.
+            </span>
+          ),
+        },
+      },
+      {
+        time: new Date(new Date().getTime() - 290000),
+        sender: users["Almog"],
+        content: {
+          getConent: () => (
+            <span>
+              hey prototype property of the constructor appears in the prototype
+              chain of the object.
+            </span>
+          ),
+        },
+      },
+      {
+        time: new Date(new Date().getTime() - 290000),
+        sender: users["Yossi"],
+        content: {
+          getConent: () => (
+            <span>
+              hey prototype property of the constructor appears in the prototype
+              chain of the object.
+            </span>
+          ),
+        },
+      },
+      {
+        time: new Date(new Date().getTime() - 290000),
+        sender: users["Yossi"],
+        content: {
+          getConent: () => (
+            <span>
+              hey prototype property of the constructor appears in the prototype
+              chain of the object.
+            </span>
+          ),
+        },
+      },
+      {
+        time: new Date(new Date().getTime() - 200000),
+        sender: users["Almog"],
+        content: {
+          getConent: () => <span>hey</span>,
+        },
+      },
+      {
+        time: new Date(new Date().getTime() - 200000),
+        sender: users["Almog"],
+        content: {
+          getConent: () => (
+            <span>
+              hey prototype property of the constructor appears in the prototype
+              chain of the object.
+            </span>
+          ),
+        },
+      },
+      {
+        time: new Date(new Date().getTime() - 190000),
+        sender: users["Almog"],
+        content: {
+          getConent: () => (
+            <span>
+              hey prototype property of the constructor appears in the prototype
+              chain of the object.
+            </span>
+          ),
+        },
+      },
+      {
+        time: new Date(new Date().getTime() - 190000),
+        sender: users["Yossi"],
+        content: {
+          getConent: () => (
+            <span>
+              hey prototype property of the constructor appears in the prototype
+              chain of the object.
+            </span>
+          ),
+        },
+      },
+      {
+        time: new Date(new Date().getTime() - 190000),
+        sender: users["Yossi"],
+        content: {
+          getConent: () => (
+            <span>
+              hey prototype property of the constructor appears in the prototype
               chain of the object.
             </span>
           ),
@@ -91,46 +172,67 @@ export const ChatExemple: (ChatType | GroupChatType)[] = [
   },
   {
     id: 2,
-    name: "Freinds",
-    participants: [
-      {
-        name: "almogie",
-        phoneNumber: "0524488432",
-        id: "123",
-        lastSync: new Date(),
-      },
-      {
-        name: "Lony",
-        phoneNumber: "0524488432",
-        id: "153",
-        lastSync: new Date(),
-      },
-    ],
+    name: "Friends For Ever ",
+    type: "group",
+    participants: [users["Almog"], users["Lony"], users["Yossi"]],
     comments: [
       {
         time: new Date(),
-        sender: {
-          name: "almog",
-          phoneNumber: "0524488432",
-          id: "123",
-          lastSync: new Date(),
-        },
+        sender: users["Almog"],
         content: {
           getConent: () => <span>hey</span>,
         },
       },
       {
         time: new Date(),
-        sender: {
-          name: "Hlmog",
-          phoneNumber: "0524488432",
-          id: "153",
-          lastSync: new Date(),
-        },
+        sender: users["Lony"],
         content: {
           getConent: () => <span>hdklashhlkdjasey</span>,
         },
       },
     ],
+  },
+];
+
+export const newDataOfYossi: CommentType[] = [
+  {
+    time: new Date("2022-07-03T19:11:57.373Z"),
+    sender: users["Almog"],
+    content: {
+      getConent: () => "Hey",
+    },
+  },
+  {
+    time: new Date("2022-07-03T19:12:00.373Z"),
+    sender: users["Yossi"],
+    content: {
+      getConent: () => (
+        <span>
+          Hey2 prototype property of the constructor appears in the prototype
+          chain of the object.
+        </span>
+      ),
+      textContect:
+        "Hey2 prototype property of the constructor appears in theprototype chain of the object.",
+    },
+  },
+  {
+    time: new Date("2022-07-03T19:12:30.373Z"),
+    sender: users["Almog"],
+    content: {
+      getConent: () => <span>hey</span>,
+    },
+  },
+  {
+    time: new Date("2022-07-03T19:12:57.373Z"),
+    sender: users["Almog"],
+    content: {
+      getConent: () => (
+        <span>
+          hey prototype property of the constructor appears in the prototype
+          chain of the object.
+        </span>
+      ),
+    },
   },
 ];

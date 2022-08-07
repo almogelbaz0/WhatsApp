@@ -11,12 +11,15 @@ interface FinderProps<T> {
   value: string;
   setValue: Dispatch<string>;
   data: T[];
+  //onChange--
   setData: Dispatch<T[]>;
   filterBy?: FilterBy<T>;
   onClear?: () => void;
 }
 
-const Finder = <T extends {}>({
+//setValue
+
+const Finder = <T extends object>({
   value,
   setValue,
   data,

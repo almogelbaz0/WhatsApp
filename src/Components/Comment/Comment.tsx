@@ -3,6 +3,7 @@ import './Comment.css';
 import React from 'react';
 
 import { CommentType } from '../../Modals/Comment/Comment';
+import { dateParser } from '../../utils/Parsers/DateParser';
 
 export interface CommentProps {
   comment: CommentType;
@@ -12,8 +13,9 @@ export interface CommentProps {
 const Comment = ({ comment, isMyComment }: CommentProps) => {
   return (
     <div className={`${isMyComment ? "myCommentDiv" : "commentDiv"}`}>
-      <div className={`${isMyComment ? "myComment" : "comment"}`}>
+      <div className={` ${isMyComment ? "myComment" : "comment"}`}>
         {comment.content.getConent()}
+        <div className="commentDate">{dateParser(comment.time)}</div>
       </div>
     </div>
   );

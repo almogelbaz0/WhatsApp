@@ -1,6 +1,7 @@
-.chat-content{
+div.chat-content{
     flex:1;
     background-color: #87d7877a;
+    overflow-y: scroll;
 }
 
 .chatInputDiv{

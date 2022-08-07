@@ -1,4 +1,4 @@
-
 export interface Content {
-    getConent : () => JSX.Element
+  getConent: () => JSX.Element | string;
+  textContect?: string;
 }

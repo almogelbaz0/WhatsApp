@@ -18,3 +18,9 @@
     flex-grow: none;
     display: flex;
 }
+
+.userConent > .chat-name{
+    padding: 0 0 0 8px;
+    align-self: center;
+
+}

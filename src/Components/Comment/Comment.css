@@ -1,9 +1,10 @@
 .myComment{
     padding: 6px;
     display: flex;
-    background-color: rgb(217, 253, 211);
+    background-color: rgb(217, 253, 211) !important;
     border-radius: 8px;
     margin: 10px;
+    flex-direction: column;
 }
 
 .comment{
@@ -12,14 +13,21 @@
     background-color: white;
     border-radius: 8px;
     margin: 10px;
+    flex-direction: column;
 }
 
 .myCommentDiv{
     display: flex;
-    flex-flow: row-reverse;
+    flex-flow: row-reverse !important;
 }
 
 .commentDiv{
     display: flex;
     flex-flow: row;
+}
+
+.commentDate {
+    align-self: flex-end;
+    font-size: 0.75rem;
+    color: gray;
 }
